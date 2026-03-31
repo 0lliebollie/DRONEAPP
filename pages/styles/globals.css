@@ -1,0 +1,26 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black: #080808;
+  --surface: #111111;
+  --surface2: #1a1a1a;
+  --border: rgba(255,255,255,0.08);
+  --border-hover: rgba(255,255,255,0.18);
+  --text: #f0ece4;
+  --text-muted: rgba(240,236,228,0.45);
+  --text-dim: rgba(240,236,228,0.25);
+  --accent: #d4a853;
+  --accent-dim: rgba(212,168,83,0.15);
+}
+
+html, body {
+  background: var(--black);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+input, select, button { font-family: inherit; }
