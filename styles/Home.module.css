@@ -1,0 +1,62 @@
+.page { min-height: 100vh; display: flex; flex-direction: column; background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(212,168,83,0.07) 0%, transparent 60%), var(--black); }
+.header { border-bottom: 1px solid var(--border); padding: 0 2rem; }
+.headerInner { max-width: 900px; margin: 0 auto; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 0.12em; color: var(--accent); }
+.headerTag { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dim); }
+.main { flex: 1; max-width: 900px; margin: 0 auto; width: 100%; padding: 4rem 2rem 3rem; }
+.hero { margin-bottom: 3rem; }
+.eyebrow { font-size: 11px; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 1rem; font-weight: 500; }
+.headline { font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px, 8vw, 96px); line-height: 0.95; color: var(--text); margin-bottom: 1.25rem; display: flex; flex-direction: column; }
+.accentLine { color: var(--accent); }
+.subhead { font-size: 16px; color: var(--text-muted); max-width: 480px; font-weight: 300; line-height: 1.65; }
+.controls { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 2.5rem; }
+.inputRow { display: flex; gap: 10px; margin-bottom: 1.5rem; }
+.inputWrap { flex: 1; }
+.input { width: 100%; height: 44px; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 0 14px; color: var(--text); font-size: 14px; outline: none; transition: border-color 0.2s; }
+.input::placeholder { color: var(--text-dim); }
+.input:focus { border-color: var(--accent); }
+.generateBtn { height: 44px; padding: 0 20px; background: var(--accent); color: var(--black); border: none; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap; transition: opacity 0.2s; }
+.generateBtn:hover:not(:disabled) { opacity: 0.88; }
+.generateBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+.loadingInner { display: flex; align-items: center; gap: 8px; }
+.spinner { width: 13px; height: 13px; border: 2px solid rgba(0,0,0,0.25); border-top-color: var(--black); border-radius: 50%; animation: spin 0.7s linear infinite; display: inline-block; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.error { font-size: 13px; color: #e07070; margin: -0.75rem 0 1rem; }
+.settingsRow { display: flex; flex-direction: column; gap: 1.25rem; }
+.settingLabel { display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; font-weight: 500; }
+.sliderVal { font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--accent); }
+.slider { width: 100%; height: 3px; -webkit-appearance: none; appearance: none; background: var(--border-hover); border-radius: 2px; outline: none; cursor: pointer; }
+.slider::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: var(--accent); cursor: pointer; border: 2px solid var(--black); }
+.sliderTicks { display: flex; justify-content: space-between; font-size: 10px; color: var(--text-dim); margin-top: 6px; }
+.pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.pill { height: 30px; padding: 0 14px; background: transparent; border: 1px solid var(--border); border-radius: 100px; color: var(--text-muted); font-size: 12px; cursor: pointer; transition: all 0.15s; }
+.pill:hover { border-color: var(--border-hover); color: var(--text); }
+.pillActive { background: var(--accent-dim); border-color: var(--accent); color: var(--accent); }
+.resultSection { animation: fadeUp 0.4s ease both; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+.imageCard { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
+.imagePlaceholder { aspect-ratio: 16/9; background: var(--surface2); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.scanLines { position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.015) 2px, rgba(255,255,255,0.015) 4px); pointer-events: none; }
+.loadingState { display: flex; flex-direction: column; align-items: center; gap: 16px; position: relative; z-index: 1; }
+.radarRing { width: 48px; height: 48px; border: 2px solid var(--accent); border-top-color: transparent; border-radius: 50%; animation: spin 1.2s linear infinite; opacity: 0.6; }
+.loadingText { font-size: 13px; color: var(--text-muted); letter-spacing: 0.05em; }
+.imageWrap { position: relative; aspect-ratio: 16/9; opacity: 0; transition: opacity 0.6s ease; }
+.imageVisible { opacity: 1; }
+.droneImage { width: 100%; height: 100%; object-fit: cover; display: block; }
+.imageOverlay { position: absolute; inset: 0; pointer-events: none; }
+.overlayCorner { position: absolute; width: 16px; height: 16px; border-color: rgba(212,168,83,0.7); border-style: solid; }
+.cornerTL { top: 12px; left: 12px; border-width: 1.5px 0 0 1.5px; }
+.cornerTR { top: 12px; right: 12px; border-width: 1.5px 1.5px 0 0; }
+.cornerBL { bottom: 12px; left: 12px; border-width: 0 0 1.5px 1.5px; }
+.cornerBR { bottom: 12px; right: 12px; border-width: 0 1.5px 1.5px 0; }
+.hudTop { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); display: flex; gap: 16px; }
+.hudLabel { font-size: 10px; letter-spacing: 0.12em; color: rgba(212,168,83,0.8); font-weight: 500; background: rgba(0,0,0,0.45); padding: 2px 8px; border-radius: 3px; }
+.hudBottom { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); }
+.hudLocation { font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 0.18em; color: rgba(212,168,83,0.7); background: rgba(0,0,0,0.5); padding: 3px 12px; border-radius: 3px; }
+.cardFooter { padding: 1.25rem 1.5rem; border-top: 1px solid var(--border); }
+.description { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin-bottom: 1rem; font-weight: 300; }
+.tagsRow { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font-size: 11px; padding: 3px 10px; background: var(--accent-dim); color: var(--accent); border-radius: 100px; border: 1px solid rgba(212,168,83,0.2); }
+.footer { border-top: 1px solid var(--border); padding: 1.25rem 2rem; text-align: center; }
+.footer p { font-size: 11px; color: var(--text-dim); letter-spacing: 0.08em; }
+@media (max-width: 600px) { .main { padding: 2.5rem 1.25rem 2rem; } .inputRow { flex-direction: column; } .generateBtn { width: 100%; } .headline { font-size: 52px; } }
